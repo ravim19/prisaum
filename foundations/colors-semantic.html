@@ -1,0 +1,26 @@
+<!-- @dsCard group="Colors" viewport="700x200" name="Semantic roles" subtitle="Surfaces, text & borders in context" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body{margin:0;background:var(--color-bg);padding:20px;font-family:var(--font-sans);}
+  .row{display:flex;gap:14px;flex-wrap:wrap;align-items:stretch;}
+  .demo{border-radius:var(--radius-md);padding:14px 16px;width:200px;border:1px solid var(--color-border);}
+  .demo h5{margin:0 0 4px;font-size:14px;}
+  .demo p{margin:0;font-size:12px;}
+  .tok{font-family:var(--font-mono);font-size:10px;opacity:.7;display:block;margin-top:8px;}
+  .surface{background:var(--color-surface);}
+  .sunken{background:var(--color-surface-sunken);}
+  .leaf{background:var(--color-surface-leaf);border-color:var(--color-border-leaf);}
+  .dark{background:var(--color-surface-dark);border-color:transparent;}
+  .dark h5{color:var(--text-on-dark);}
+  .dark p{color:var(--text-on-dark-muted);}
+  .strong{color:var(--text-strong);} .bodyc{color:var(--text-body);} .muted{color:var(--text-muted);}
+</style></head><body>
+<div class="row">
+  <div class="demo surface"><h5 class="strong">Surface · white</h5><p class="bodyc">Body text on a card.</p><p class="muted">Muted secondary line.</p><span class="tok muted">--color-surface</span></div>
+  <div class="demo sunken"><h5 class="strong">Sunken</h5><p class="bodyc">Recessed panels &amp; wells.</p><span class="tok muted">--color-surface-sunken</span></div>
+  <div class="demo leaf"><h5 class="strong">Leaf panel</h5><p class="bodyc">Tinted callouts &amp; quotes.</p><span class="tok muted">--color-surface-leaf</span></div>
+  <div class="demo dark"><h5>Forest section</h5><p>Footer &amp; feature bands.</p><span class="tok" style="color:var(--green-300)">--color-surface-dark</span></div>
+</div>
+</body></html>

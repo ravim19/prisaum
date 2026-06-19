@@ -1,0 +1,24 @@
+<!-- @dsCard group="Brand" viewport="700x260" name="Logo" subtitle="Colour + reversed lockups" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body{margin:0;background:var(--color-surface);padding:0;font-family:var(--font-sans);}
+  .grid{display:grid;grid-template-columns:1fr 1fr;}
+  .cell{padding:28px;display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center;min-height:200px;}
+  .light{background:var(--color-surface);} .dark{background:var(--green-900);}
+  .cell img{max-width:260px;height:auto;}
+  .cap{font-size:11px;font-family:var(--font-mono);}
+  .light .cap{color:var(--text-muted);} .dark .cap{color:var(--text-on-dark-muted);}
+</style></head><body>
+<div class="grid">
+  <div class="cell light">
+    <img src="../assets/site/logo-color.png" alt="Prisaum Seva logo" />
+    <span class="cap">Primary · on light</span>
+  </div>
+  <div class="cell dark">
+    <img src="../assets/site/logo-reversed.png" alt="Prisaum Seva logo reversed" />
+    <span class="cap">Reversed · on forest #2d3f2f</span>
+  </div>
+</div>
+</body></html>

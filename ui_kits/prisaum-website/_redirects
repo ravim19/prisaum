@@ -1,0 +1,29 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Prisaum SEVA — Netlify _redirects   (place at the site root)
+# Canonical host: https://prisaum.com  (NON-www — matches your existing canonical)
+# ─────────────────────────────────────────────────────────────────────────────
+
+# 1) Force HTTPS + non-www (canonicalise the host)
+http://prisaum.com/*        https://prisaum.com/:splat   301!
+http://www.prisaum.com/*    https://prisaum.com/:splat   301!
+https://www.prisaum.com/*   https://prisaum.com/:splat   301!
+
+# 2) Strip the HubSpot language query (?hsLang=en) to the clean URL
+/*    hsLang=:lang    /:splat    301
+
+# 3) Retire HubSpot template / system pages (filler that shipped with the theme)
+/people-detail-page          /            301
+/en/people-detail-page       /            301
+
+# KEEP as real pages (do NOT redirect away — they hold SEO value):
+#   /            → home
+#   /about-us    → real page (built)
+#   /programs    → programmes hub
+#   /support     → real page (built)
+#
+# Old programme deep links (/programs#baking, …) are URL *fragments*: a server 301
+# can't match them. They are forwarded client-side by
+# programs/legacy-hash-redirect.js, loaded on the /programs hub.
+
+# 4) Clean URLs — Netlify auto-serves /programs/baking-confectionery and /about-us
+#    from the matching .html file, so no rule is required.

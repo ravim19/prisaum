@@ -1,0 +1,28 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Prisaum SEVA — Apache .htaccess   (place at the site root)
+# Canonical host: https://prisaum.com  (NON-www — matches your existing canonical)
+# ─────────────────────────────────────────────────────────────────────────────
+RewriteEngine On
+
+# 1) Force HTTPS + non-www (canonicalise the host)
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^ https://prisaum.com%{REQUEST_URI} [L,R=301]
+
+# 2) Strip the HubSpot language query (?hsLang=…)
+RewriteCond %{QUERY_STRING} (?:^|&)hsLang= [NC]
+RewriteRule ^(.*)$ /$1? [L,R=301]
+
+# 3) Clean URLs: serve /programs/baking-confectionery from baking-confectionery.html
+#    (and /about-us from about-us.html, /support from support.html)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+# 4) Retire HubSpot template / system filler pages
+Redirect 301 /people-detail-page    /
+Redirect 301 /en/people-detail-page /
+
+# KEEP /, /about-us, /programs, /support as real pages (they hold SEO value).
+# Old /programs#<anchor> deep links are fragments — forwarded by
+# programs/legacy-hash-redirect.js on the /programs hub (the # never reaches Apache).

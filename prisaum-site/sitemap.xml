@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Prisaum SEVA — XML sitemap.
+  Self-hosted site (migrated off HubSpot). Update <lastmod> when content changes
+  and submit this file in Google Search Console (Sitemaps).
+  In production these paths become clean URLs, e.g. /programs/baking-confectionery
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://prisaum.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://prisaum.com/about-us</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://prisaum.com/support</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://prisaum.com/programs</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+
+  <!-- Vocational training -->
+  <url><loc>https://prisaum.com/programs/baking-confectionery</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://prisaum.com/programs/weaving</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://prisaum.com/programs/gardening-horticulture</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://prisaum.com/programs/computer-skills</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://prisaum.com/programs/printing-merchandise</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://prisaum.com/programs/self-grooming-hygiene</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://prisaum.com/programs/housekeeping</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://prisaum.com/programs/eco-friendly-plate-making</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://prisaum.com/programs/laundry-fabric-care</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Educational & therapeutic -->
+  <url><loc>https://prisaum.com/programs/nios-support</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://prisaum.com/programs/music-arts-therapy</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://prisaum.com/programs/play-therapy</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://prisaum.com/programs/recreational-learning</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://prisaum.com/programs/occupational-therapy</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://prisaum.com/programs/life-skills-training</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+</urlset>

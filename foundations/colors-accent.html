@@ -1,0 +1,30 @@
+<!-- @dsCard group="Colors" viewport="700x180" name="Accents — marigold & brick" subtitle="Warm support CTA + destructive" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body{margin:0;background:var(--color-surface);padding:20px;font-family:var(--font-sans);}
+  .group{margin-bottom:16px;}
+  .lbl{font-size:11px;font-weight:700;letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--text-muted);margin:0 0 8px;}
+  .scale{display:flex;gap:8px;}
+  .sw{display:flex;flex-direction:column;gap:6px;width:64px;}
+  .chip{height:46px;border-radius:var(--radius-sm);border:1px solid rgba(0,0,0,.06);}
+  .n{font-size:11px;font-weight:700;color:var(--text-strong);}
+  .h{font-size:10px;font-family:var(--font-mono);color:var(--text-muted);}
+</style></head><body>
+<div class="group">
+  <p class="lbl">Marigold — support / donate / volunteer (added accent)</p>
+  <div class="scale" id="g"></div>
+</div>
+<div class="group">
+  <p class="lbl">Brick — destructive / error</p>
+  <div class="scale" id="r"></div>
+</div>
+<script>
+function row(id,pfx,steps){document.getElementById(id).innerHTML=steps.map(n=>{
+  const v=getComputedStyle(document.documentElement).getPropertyValue('--'+pfx+'-'+n).trim();
+  return `<div class="sw"><div class="chip" style="background:${v}"></div><span class="n">${n}</span><span class="h">${v}</span></div>`;}).join('');}
+row('g','gold',[50,100,200,300,400,500,600,700]);
+row('r','red',[50,500,600,700]);
+</script>
+</body></html>

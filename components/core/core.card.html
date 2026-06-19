@@ -1,0 +1,73 @@
+<!-- @dsCard group="Components" viewport="700x440" name="Core — Buttons, Tags, Card, Avatar" subtitle="Pill buttons, status tags, surfaces & avatars" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="../../styles.css" />
+<style>
+  body { margin: 0; background: var(--color-bg); padding: 24px; }
+  .grid { display: flex; flex-direction: column; gap: 22px; max-width: 652px; }
+  .row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+  .lbl { font: var(--weight-bold) 11px/1 var(--font-sans); letter-spacing: var(--tracking-eyebrow);
+         text-transform: uppercase; color: var(--text-muted); width: 100%; margin-bottom: 2px; }
+  .panel-dark { background: var(--green-900); border-radius: var(--radius-md); padding: 16px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+const { Button, Tag, Card, Avatar } = window.PrisaumSevaDesignSystem_cee68f;
+const Heart = () => <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-10-9.2C.3 8.5 1.7 5 5 5c2 0 3.2 1.2 4 2.4C9.8 6.2 11 5 13 5c3.3 0 4.7 3.5 3 6.8C19.5 16.4 12 21 12 21z"/></svg>;
+function Demo() {
+  return (
+    <div className="grid">
+      <div className="row">
+        <span className="lbl">Buttons</span>
+        <Button variant="primary">Apply for Admission</Button>
+        <Button variant="support" iconLeft={<Heart/>}>Support Us</Button>
+        <Button variant="secondary">Our Programs</Button>
+        <Button variant="ghost">Learn more</Button>
+      </div>
+      <div className="row">
+        <span className="lbl">Sizes &amp; states</span>
+        <Button size="sm">Small</Button>
+        <Button size="md">Medium</Button>
+        <Button size="lg">Large</Button>
+        <Button disabled>Disabled</Button>
+      </div>
+      <div className="row panel-dark">
+        <Button variant="onDark">Register As Volunteer</Button>
+        <Button variant="support">Donate</Button>
+      </div>
+      <div className="row">
+        <span className="lbl">Tags</span>
+        <Tag tone="leaf">Vocational</Tag>
+        <Tag tone="info">Therapeutic</Tag>
+        <Tag tone="success" dot>Admissions Open</Tag>
+        <Tag tone="warning" variant="solid">NIOS</Tag>
+        <Tag tone="neutral" variant="outline">Age 12+</Tag>
+      </div>
+      <div className="row">
+        <span className="lbl">Card &amp; Avatars</span>
+        <Card interactive style={{maxWidth:280}}>
+          <h4 style={{margin:'0 0 6px'}}>Whom We Serve</h4>
+          <p style={{margin:0, color:'var(--text-muted)', fontSize:'14px'}}>Adults &amp; children with intellectual and developmental needs.</p>
+        </Card>
+        <div style={{display:'flex', gap:8, alignItems:'center'}}>
+          <Avatar name="Pauline Wright" ring />
+          <Avatar name="James Stewart" />
+          <Avatar name="Goldie Taylor" size="sm" />
+        </div>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+/* ============================================================
+   Prisaum Seva — Color tokens
+   Brand identity sampled from the logo + live site (prisaum.com):
+     forest green  #2d3f2f   (logo background, ink)
+     leaf green    #7c9a55   (logomark figures, accents)
+   Warm off-white surfaces + a marigold "support" accent round it out.
+   ============================================================ */
+
+:root {
+  /* ---- Brand: Leaf/Forest green scale (the core hue) ---- */
+  --green-50:  #f5f8ef;
+  --green-100: #e8f0d7;
+  --green-200: #d3e2b4;
+  --green-300: #b9d089;
+  --green-400: #9eba63;
+  --green-500: #7c9a55;  /* brand leaf — logomark */
+  --green-600: #647f42;
+  --green-700: #4e6534;  /* primary action (AA on white) */
+  --green-800: #3c4f2b;
+  --green-900: #2d3f2f;  /* brand forest — logo background */
+  --green-950: #1c2a1c;
+
+  /* ---- Warm neutrals (stone, faint green-warm undertone) ---- */
+  --stone-50:  #faf9f5;  /* page surface, warm off-white */
+  --stone-100: #f2f1ea;
+  --stone-200: #e6e4da;  /* hairline borders */
+  --stone-300: #d3d0c4;
+  --stone-400: #aeab9d;
+  --stone-500: #827f72;  /* muted text */
+  --stone-600: #605e53;
+  --stone-700: #474639;
+  --stone-800: #33352d;  /* body ink */
+  --stone-900: #1f1f19;
+
+  /* ---- Marigold: warm support/donate accent (complementary, added) ---- */
+  --gold-50:  #fdf6e9;
+  --gold-100: #fae9c4;
+  --gold-200: #f5d791;
+  --gold-300: #efc163;
+  --gold-400: #e9ad42;
+  --gold-500: #e3a02f;  /* marigold accent */
+  --gold-600: #c47f1d;
+  --gold-700: #9a6216;
+
+  /* ---- Functional hues ---- */
+  --red-50:  #fbeeec;
+  --red-500: #c0432f;   /* warm brick — destructive/error */
+  --red-600: #a3361f;
+  --red-700: #7e2a18;
+
+  /* ===========================================================
+     SEMANTIC ALIASES  — prefer these in product/code
+     =========================================================== */
+
+  /* Surfaces & backgrounds */
+  --color-bg:            var(--stone-50);
+  --color-surface:       #ffffff;
+  --color-surface-sunken:var(--stone-100);
+  --color-surface-dark:  var(--green-900);   /* dark sections, footer */
+  --color-surface-leaf:  var(--green-50);    /* tinted callout panels */
+
+  /* Text */
+  --text-strong:  var(--green-900);   /* headings */
+  --text-body:    var(--stone-800);
+  --text-muted:   var(--stone-500);
+  --text-on-dark: #f4f6ef;            /* cream on forest */
+  --text-on-dark-muted: #c3cdb6;
+  --text-link:    var(--green-700);
+
+  /* Brand actions */
+  --color-primary:        var(--green-700);
+  --color-primary-hover:  var(--green-800);
+  --color-primary-active: var(--green-900);
+  --color-primary-soft:   var(--green-100);
+  --color-accent:         var(--green-500);  /* leaf accent */
+  --color-support:        var(--gold-500);   /* donate / volunteer CTA */
+  --color-support-hover:  var(--gold-600);
+
+  /* Borders & lines */
+  --color-border:        var(--stone-200);
+  --color-border-strong: var(--stone-300);
+  --color-border-leaf:   var(--green-200);
+
+  /* Status (admissions, programs, donations) */
+  --status-success-fg: var(--green-700);
+  --status-success-bg: var(--green-100);
+  --status-warning-fg: var(--gold-700);
+  --status-warning-bg: var(--gold-100);
+  --status-danger-fg:  var(--red-600);
+  --status-danger-bg:  var(--red-50);
+  --status-info-fg:    var(--green-800);
+  --status-info-bg:    var(--stone-100);
+
+  /* Focus ring */
+  --color-ring: rgba(124, 154, 85, 0.45);
+}

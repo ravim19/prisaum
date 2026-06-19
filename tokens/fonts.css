@@ -1,0 +1,38 @@
+/* ============================================================
+   Prisaum Seva — Web fonts
+   Plus Jakarta Sans  → friendly geometric-humanist sans (UI + display)
+   IBM Plex Mono      → utility mono (reg. numbers, stats, codes)
+   Self-hosted (OFL). Binaries in /assets/fonts.
+   ============================================================ */
+
+/* Plus Jakarta Sans — variable weight 200–800 */
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("../assets/fonts/PlusJakartaSans[wght].ttf") format("truetype-variations");
+}
+
+/* IBM Plex Mono — static weights */
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/IBMPlexMono-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../assets/fonts/IBMPlexMono-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../assets/fonts/IBMPlexMono-SemiBold.ttf") format("truetype");
+}

@@ -1,0 +1,19 @@
+<!-- @dsCard group="Spacing" viewport="700x170" name="Spacing scale" subtitle="4px base · rem tokens" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body{margin:0;background:var(--color-surface);padding:22px;font-family:var(--font-sans);}
+  .row{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap;}
+  .sw{display:flex;flex-direction:column;align-items:center;gap:6px;}
+  .bar{background:var(--green-500);border-radius:3px;width:22px;}
+  .n{font-size:11px;font-weight:700;color:var(--text-strong);}
+  .h{font-size:10px;font-family:var(--font-mono);color:var(--text-muted);}
+</style></head><body>
+<div class="row" id="s"></div>
+<script>
+const tk=[['1','4'],['2','8'],['3','12'],['4','16'],['5','20'],['6','24'],['8','32'],['10','40'],['12','48'],['16','64'],['20','80']];
+document.getElementById('s').innerHTML=tk.map(([n,px])=>
+  `<div class="sw"><div class="bar" style="height:${px}px"></div><span class="n">${n}</span><span class="h">${px}</span></div>`).join('');
+</script>
+</body></html>

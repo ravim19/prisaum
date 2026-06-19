@@ -1,0 +1,97 @@
+<!-- @template name="Program landing page" description="On-brand Prisaum Seva page: forest hero, programme grid, support CTA & footer" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Programme · Prisaum SEVA</title>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script src="./ds-base.js"></script>
+<style>
+  body { margin: 0; }
+  .wrap { max-width: var(--container-max); margin: 0 auto; padding: 0 24px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" data-presets="react">
+  function mount() {
+    const NS = window.PrisaumSevaDesignSystem_cee68f;
+    if (!NS) { return setTimeout(mount, 40); } // wait for async bundle load
+    const { Button, Tag, SectionHeading, ProgramCard, StatCard } = NS;
+    const Ico = ({ name, size = 20 }) =>
+      React.createElement("i", { "data-lucide": name, style: { width: size, height: size, display: "inline-flex" } });
+    const refresh = () => window.lucide && window.lucide.createIcons({ attrs: { "stroke-width": 2 } });
+
+    const PROGRAMS = [
+      { icon: "cookie", title: "Baking & Confectionery", desc: "Baking, decoration and safe kitchen practice." },
+      { icon: "sprout", title: "Gardening & Horticulture", desc: "Nursery, crop care and landscape maintenance." },
+      { icon: "monitor", title: "Computer Skills", desc: "Digital literacy, data entry and online communication." },
+    ];
+
+    function Page() {
+      React.useEffect(refresh);
+      return (
+        <div>
+          {/* Hero */}
+          <section style={{ background: "var(--green-900)", color: "var(--text-on-dark)", padding: "clamp(3rem,7vw,6rem) 0" }}>
+            <div className="wrap" style={{ display: "flex", flexDirection: "column", gap: 20, maxWidth: 820 }}>
+              <Tag tone="warning" variant="solid" size="lg">Admissions · Age 12+</Tag>
+              <h1 style={{ margin: 0, fontSize: "clamp(2rem,4.5vw,3.2rem)", fontWeight: 800, color: "#fff", lineHeight: 1.1, letterSpacing: "var(--tracking-tight)" }}>
+                Vocational training that builds <span style={{ color: "var(--green-300)" }}>real independence</span>
+              </h1>
+              <p style={{ margin: 0, fontSize: "var(--text-lg)", color: "var(--text-on-dark-muted)", maxWidth: 600, lineHeight: 1.6 }}>
+                A residential programme in Chennai where young adults with special needs gain job skills,
+                life skills and confidence — with dignity at the centre.
+              </p>
+              <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 4 }}>
+                <Button variant="onDark" size="lg" iconRight={<Ico name="arrow-right" size={18} />}>Enquire now</Button>
+                <Button variant="support" size="lg" iconLeft={<Ico name="heart" size={18} />}>Support Us</Button>
+              </div>
+            </div>
+          </section>
+
+          {/* Programmes */}
+          <section style={{ background: "var(--color-bg)", padding: "var(--section-pad-y) 0" }}>
+            <div className="wrap" style={{ display: "flex", flexDirection: "column", gap: 32 }}>
+              <SectionHeading eyebrow="Our Programs" title="What you'll learn"
+                intro="Each programme is hands-on, certified and tailored to the learner." />
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 22 }}>
+                {PROGRAMS.map((p) => (
+                  <ProgramCard key={p.title} icon={<Ico name={p.icon} size={26} />} title={p.title}
+                    description={p.desc} tag={<Tag tone="leaf" size="sm">Vocational</Tag>} href="#"
+                    onClick={(e) => e.preventDefault()} />
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Impact band */}
+          <section style={{ background: "var(--green-900)", padding: "48px 0" }}>
+            <div className="wrap" style={{ display: "flex", gap: 48, flexWrap: "wrap", justifyContent: "center" }}>
+              <StatCard value="15" suffix="+" label="Skill programmes" align="center" onDark />
+              <StatCard value="2" label="Chennai campuses" align="center" onDark />
+              <StatCard value="12" suffix="+" label="Admissions from age" align="center" onDark />
+            </div>
+          </section>
+
+          {/* Footer */}
+          <footer style={{ background: "var(--green-950)", color: "var(--text-on-dark-muted)", padding: "28px 0", fontSize: 13.5 }}>
+            <div className="wrap" style={{ display: "flex", justifyContent: "space-between", gap: 16, flexWrap: "wrap" }}>
+              <span>© 2025 Prisaum Empowerment Foundation</span>
+              <span className="ps-mono">support@prisaum.com · 98404 04752</span>
+            </div>
+          </footer>
+        </div>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById("root")).render(<Page />);
+    setTimeout(refresh, 60);
+  }
+  document.addEventListener("DOMContentLoaded", mount);
+</script>
+</body>
+</html>

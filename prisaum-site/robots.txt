@@ -1,0 +1,5 @@
+# Prisaum SEVA — robots.txt (self-hosted)
+User-agent: *
+Allow: /
+
+Sitemap: https://prisaum.com/sitemap.xml

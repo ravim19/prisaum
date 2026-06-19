@@ -1,0 +1,131 @@
+<!-- @dsCard group="Prisaum Website" viewport="1280x760" name="Programmes hub" subtitle="Crawlable index linking every programme page" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Our Programs — Vocational &amp; Special Education in Chennai | Prisaum SEVA</title>
+<meta name="description" content="Explore Prisaum SEVA's vocational training and special-education programmes in Chennai — baking, weaving, gardening, computer skills, NIOS coaching, therapy and life skills for young adults with special needs." />
+<link rel="canonical" href="https://prisaum.com/programs" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Our Programs — Prisaum SEVA" />
+<meta property="og:description" content="Vocational training and special-education programmes in Chennai for young adults with special needs." />
+<meta property="og:url" content="https://prisaum.com/programs" />
+<meta property="og:image" content="https://prisaum.com/assets/site/hero.png" />
+<link rel="stylesheet" href="../../../styles.css" />
+<style>
+  body { margin: 0; background: var(--color-bg); }
+  .ps-mobile-nav { display: none; }
+  @media (max-width: 920px) {
+    .ps-desktop-nav { display: none !important; }
+    .ps-mobile-nav { display: inline-flex; }
+    .ps-site [style*="repeat(3"] { grid-template-columns: 1fr 1fr !important; }
+  }
+  @media (max-width: 620px) { .ps-site [style*="repeat(3"] { grid-template-columns: 1fr !important; } }
+  .ps-site a { text-decoration: none; }
+  html { scroll-behavior: smooth; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script src="../../../_ds_bundle.js"></script>
+<script src="legacy-hash-redirect.js"></script>
+<script type="text/babel" src="../data.js"></script>
+<script type="text/babel" src="../Footer.jsx"></script>
+<script type="text/babel" src="program-content.js"></script>
+<script type="text/babel">
+const { Button: HBtn, Tag: HTag, SectionHeading: HSH, ProgramCard: HPCard } = window.PrisaumSevaDesignSystem_cee68f;
+const HOME = "../index.html";
+
+function hrefFor(p) {
+  return p.slug ? `${p.slug}.html` : `${HOME}#programs`;
+}
+
+function Hub() {
+  React.useEffect(() => { refreshIcons(); });
+  const groups = [
+    { key: "v", tone: "leaf", label: "Vocational", eyebrow: "Vocational Training",
+      title: "Job skills that build independence", list: VOCATIONAL },
+    { key: "t", tone: "info", label: "Therapeutic", eyebrow: "Educational & Therapeutic",
+      title: "Learning, therapy & life skills", list: THERAPEUTIC },
+  ];
+  return (
+    <div className="ps-site">
+      <header style={S.header}>
+        <div style={S.headerInner}>
+          <a href={HOME} style={{ display: "inline-flex" }}>
+            <img src={IMG.logoReversed} alt="Prisaum SEVA — home" style={{ height: 84, width: "auto", display: "block" }} />
+          </a>
+          <nav style={S.nav} className="ps-desktop-nav">
+            <a href={HOME + "#about"} style={S.navLink}>About Us</a>
+            <a href={HOME + "#programs"} style={S.navLink}>Our Programs</a>
+            <HBtn variant="support" iconLeft={<Ico name="heart" size={17} />} href={HOME + "#support"}>Support Us</HBtn>
+          </nav>
+          <a href={HOME} className="ps-mobile-nav" style={{ ...S.navLink, marginLeft: "auto" }}><Ico name="arrow-left" size={18} /> Home</a>
+        </div>
+      </header>
+
+      <section style={S.hero}>
+        <div style={S.glow} />
+        <div style={S.heroInner}>
+          <nav aria-label="Breadcrumb" style={S.crumbs}>
+            <a href={HOME} style={S.crumbLink}>Home</a>
+            <Ico name="chevron-right" size={14} />
+            <span style={{ color: "#fff", fontWeight: 600 }}>Programs</span>
+          </nav>
+          <h1 style={S.h1}>Our Programs</h1>
+          <p style={S.lede}>Hands-on vocational training paired with educational and therapeutic support — every
+            programme tailored to the learner, for young adults and children with special needs in Chennai.</p>
+        </div>
+      </section>
+
+      <main style={S.main}>
+        {groups.map((g) => (
+          <section key={g.key} style={S.group}>
+            <HSH eyebrow={g.eyebrow} title={g.title} />
+            <div style={S.grid}>
+              {g.list.map((p) => (
+                <HPCard key={p.title}
+                  icon={<Ico name={p.icon} size={26} />}
+                  title={p.title}
+                  description={p.desc}
+                  tag={<HTag tone={g.tone} size="sm">{g.label}</HTag>}
+                  href={hrefFor(p)}
+                  cta={p.slug ? "View programme" : "Learn more"} />
+              ))}
+            </div>
+          </section>
+        ))}
+      </main>
+
+      <Footer />
+    </div>
+  );
+}
+
+const S = {
+  header: { position: "sticky", top: 0, zIndex: 100, background: "var(--green-900)", boxShadow: "var(--shadow-md)" },
+  headerInner: { maxWidth: "var(--container-max)", margin: "0 auto", padding: "4px 24px", display: "flex", alignItems: "center", gap: 24 },
+  nav: { display: "flex", alignItems: "center", gap: 6, marginLeft: "auto" },
+  navLink: { display: "inline-flex", alignItems: "center", gap: 6, padding: "10px 14px", fontSize: 15, fontWeight: 600, color: "var(--text-on-dark)", whiteSpace: "nowrap" },
+  hero: { position: "relative", background: "var(--green-800)", color: "var(--text-on-dark)", overflow: "hidden" },
+  glow: { position: "absolute", top: -160, right: -120, width: 480, height: 480, borderRadius: "50%", background: "radial-gradient(circle, rgba(124,154,85,.4), transparent 70%)", pointerEvents: "none" },
+  heroInner: { position: "relative", maxWidth: "var(--container-max)", margin: "0 auto", padding: "22px 24px clamp(2.5rem,5vw,3.5rem)" },
+  crumbs: { display: "flex", alignItems: "center", gap: 8, fontSize: 13.5, color: "var(--text-on-dark-muted)", marginBottom: 20 },
+  crumbLink: { color: "var(--green-200)", fontWeight: 600 },
+  h1: { margin: "0 0 12px", fontSize: "clamp(2.2rem,4.5vw,3.2rem)", fontWeight: 800, color: "#fff", letterSpacing: "var(--tracking-tight)" },
+  lede: { margin: 0, fontSize: "var(--text-lg)", lineHeight: 1.6, color: "var(--text-on-dark-muted)", maxWidth: 620 },
+  main: { maxWidth: "var(--container-max)", margin: "0 auto", padding: "clamp(2.5rem,6vw,4.5rem) 24px", display: "flex", flexDirection: "column", gap: "clamp(2.5rem,5vw,4rem)" },
+  group: { display: "flex", flexDirection: "column", gap: 24 },
+  grid: { display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 22 },
+};
+
+ReactDOM.createRoot(document.getElementById("root")).render(<Hub />);
+setTimeout(refreshIcons, 80);
+</script>
+</body>
+</html>

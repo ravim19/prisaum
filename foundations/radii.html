@@ -1,0 +1,19 @@
+<!-- @dsCard group="Spacing" viewport="700x170" name="Radii" subtitle="Soft, friendly corners" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body{margin:0;background:var(--color-surface);padding:22px;font-family:var(--font-sans);}
+  .row{display:flex;gap:18px;flex-wrap:wrap;}
+  .sw{display:flex;flex-direction:column;align-items:center;gap:8px;}
+  .box{width:74px;height:60px;background:var(--green-100);border:1.5px solid var(--green-400);border-bottom:none;}
+  .n{font-size:12px;font-weight:700;color:var(--text-strong);}
+  .h{font-size:10px;font-family:var(--font-mono);color:var(--text-muted);}
+</style></head><body>
+<div class="row" id="s"></div>
+<script>
+const tk=[['sm','8px'],['md','12px'],['lg','16px'],['xl','24px'],['2xl','32px'],['pill','999px']];
+document.getElementById('s').innerHTML=tk.map(([n,v])=>
+  `<div class="sw"><div class="box" style="border-top-left-radius:${v};border-top-right-radius:${v}"></div><span class="n">${n}</span><span class="h">${v}</span></div>`).join('');
+</script>
+</body></html>

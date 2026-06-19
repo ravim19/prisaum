@@ -1,0 +1,21 @@
+# Cloudflare Pages — _redirects for Prisaum SEVA
+# ---------------------------------------------------------------
+# Cloudflare Pages serves clean URLs automatically:
+#   about-us.html            is served at /about-us
+#   programs/baking-...html  is served at /programs/baking-confectionery
+# So NO rule is needed for pretty URLs.
+#
+# HTTPS and www -> non-www canonicalisation are handled in the Cloudflare
+# dashboard (see DEPLOY-CLOUDFLARE.md, step 4), not here.
+# ---------------------------------------------------------------
+
+# Retire old HubSpot theme / system filler pages
+/people-detail-page       /   301
+/en/people-detail-page    /   301
+
+# (Old /programs#baking style deep links are URL fragments — the browser never
+#  sends the part after "#" to the server, so they're forwarded by
+#  programs/legacy-hash-redirect.js, which runs fine on Cloudflare Pages.)
+#
+# (Old ?hsLang=en duplicate URLs are neutralised by the <link rel="canonical">
+#  tag on every page, so no redirect is required.)
