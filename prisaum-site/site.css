@@ -225,6 +225,8 @@ img { display: block; max-width: 100%; }
   .home-hero__inner, .involve__inner, .prog-hero-grid, .prog-layout { grid-template-columns: 1fr; }
   .grid-4 { grid-template-columns: 1fr 1fr; }
   .aside { position: static; }
+  .site-footer__inner { grid-template-columns: 1fr 1fr; gap: 28px 32px; }
+  .site-footer__brand { grid-column: 1 / -1; }
 }
 @media (max-width: 920px) {
   .desktop-only { display: none !important; }
@@ -240,4 +242,6 @@ img { display: block; max-width: 100%; }
 }
 @media (max-width: 680px) {
   .grid-3, .grid-2, .grid-4, .related-grid { grid-template-columns: 1fr; }
+  .site-footer__inner { grid-template-columns: 1fr; gap: 28px; padding: 40px 24px; }
+  .site-footer__bottom-inner { flex-direction: column; align-items: flex-start; gap: 10px; text-align: left; }
 }
